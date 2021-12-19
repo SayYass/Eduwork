@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game</title>
+</head>
+<body>
+  
+    <script>
+        
+        if(confirm('Selamat Datang di mini game. Kamu dan temanmu hanya perlu menebak angka diantara angka 1-3 game terdiri dari 5 ronde, ingin melanjutkan ?') == true){
+            game = 5;
+            let a = 0;
+            let b = 0;
+           
+            const nilai = [1,2,3];
+            const randomnilai = 2;
+            
+            
+        for (let i=1; i<=game; i++){
+           alert('Ronde Ke ' + i);
+           let player1 = prompt( 'Player 1 Silahkan Masukan Angka ');
+           if (player1 == randomnilai ){
+                nilai1 = a++;
+            } else {
+               nilai1 = a ;
+            }
+            let player2 = prompt( 'Player 2 Silahkan Masukan Angka');
+            
+            if (player2 == randomnilai ){
+                nilai2 = b++;
+            } else {
+                nilai2 = a;
+            }
+
+           alert('Jawaban Yang Benar Adalah : ' + randomnilai + '\n------------------------------------\nScore Player 1 : ' + nilai1 + '\n------------------------------------\nScore Player 2 : ' + nilai2);
+        }
+        } else {      
+         alert('terimakasih');
+        }
+
+        if (nilai1>nilai2){
+            alert('Selamat Player 1 Menang')
+        } else if(nilai2>nilai1){
+            alert('Selamat Player 1 Menang')
+        } else {
+            alert('Permainan Seri')
+        }
+
+        
+
+        
+
+
+    </script>
+</body>
+</html>

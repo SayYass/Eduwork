@@ -15,35 +15,33 @@
             let a = 0;
             let b = 0;
            
-            const nilai = [1,2,3];
-            const randomnilai = nilai[Math.floor(Math.random() * nilai.length)];
+            
+           
             
             
         for (let i=1; i<=game; i++){
+            const nilai = [1,2,3];
+            const randomnilai = nilai[Math.floor(Math.random() * nilai.length)];
            alert('Ronde Ke ' + i);
            let player1 = prompt( 'Player 1 Silahkan Masukan Angka ');
            if (player1 == randomnilai ){
-                nilai1 = a++;
-            } else {
-               nilai1 = a ;
-            }
+                a = a+1;
+            } 
             let player2 = prompt( 'Player 2 Silahkan Masukan Angka');
             
             if (player2 == randomnilai ){
-                nilai2 = b++;
-            } else {
-                nilai2 = a;
+                b = b+1;
             }
 
-           alert('Jawaban Yang Benar Adalah : ' + randomnilai + '\n------------------------------------\nScore Player 1 : ' + nilai1 + '\n------------------------------------\nScore Player 2 : ' + nilai2);
+           alert('Jawaban Yang Benar Adalah : ' + randomnilai + '\n------------------------------------\nScore Player 1 : ' + a + '\n------------------------------------\nScore Player 2 : ' + b);
         }
         } else {      
          alert('terimakasih');
         }
 
-        if (nilai1>nilai2){
+        if (a>b){
             alert('Selamat Player 1 Menang')
-        } else if(nilai2>nilai1){
+        } else if(b>a){
             alert('Selamat Player 1 Menang')
         } else {
             alert('Permainan Seri')

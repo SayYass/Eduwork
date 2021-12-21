@@ -13,6 +13,17 @@ new gridjs.Grid({
         sort:true,
         search:{
             enabled:true
+        },
+        language: {
+          'search': {
+            'placeholder': '🔍 Search...'
+          },
+          'pagination': {
+            'previous': '⬅️',
+            'next': '➡️',
+            'showing': '😃 Displaying',
+            'results': () => 'Records'
+          }
         }
   }).render(document.getElementById("wrapper"));
 

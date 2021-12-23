@@ -1,27 +1,25 @@
-function getData(url, success, error){
-    let xhr = new XMLHttpRequest();
+const data = 'data/users.json'
+const listData = document.getElementById('data');
 
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState === 4){
-            if(xhr.status === 200){
-                success(xhr.response);
-            } else if (xhr.status === 404){
-                error();
-            }
-        }
-    }
-
-    xhr.open('get', url);
-    xhr.send();
-
+const getListJson = () => {
+    fetch(data)
+    .then(response => {
+        return response.json();
+    }).then(responeJson => {
+        console.log(responeJson);
+        listData.innerHTML = "";
+        let people = responeJson;
+        people.forEach(item => {
+            listData.innerHTML += `<tr>
+            <th scope="row">${item.id}</th>
+            <td>${item.name}</td>
+            <td>${item.username}</td>
+            <td>${item.email}</td>
+            <td>${item.address.city}</td>
+            <td>${item.company.name}</td>
+          </tr>`
+        });
+    })
 }
 
-getData('data/users.json' , results=>{
-const data = JSON.parse(results);
-
-data.forEach( m => console.log(m.name));
-
-} , 
-
-
-()=>{});
+document.addEventListener('DOMContentLoaded', getListJson);

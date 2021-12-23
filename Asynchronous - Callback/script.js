@@ -18,7 +18,7 @@ function getData(url, success, error){
 
 getData('data/users.json' , results=>{
 const data = JSON.parse(results);
-tble.getElementById('data');
+
 data.forEach( m => console.log(m.name));
 
 } , 
